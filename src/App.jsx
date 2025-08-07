@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
+import Spinner from "./components/Spinner";
+
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,7 +71,7 @@ function App() {
             <h2 className="my-5">All Movies</h2>
 
             {isLoading ? (
-              <p>Loading...</p>
+              <Spinner/>
             ) : errorMsg ? (
               <p className="error">{errorMsg}</p>
             ) : (
